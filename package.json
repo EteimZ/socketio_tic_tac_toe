@@ -1,0 +1,22 @@
+{
+  "name": "socketio_tic_tac_toe",
+  "version": "1.0.0",
+  "description": "Multiple player tic tac toe that enables clients play from different locations.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "socket.io",
+    "tic_tac_toe",
+    "websockets"
+  ],
+  "author": "eteims",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.13",
+    "socket.io": "^4.3.0"
+  }
+}
