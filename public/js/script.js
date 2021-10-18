@@ -1,18 +1,19 @@
-let socket = io();
+const socket = io();
 let symbol;
 
-let message = document.querySelector("#messages");
-let board = document.querySelectorAll(".board button");
-let button = document.querySelectorAll(".board> button");
+const message = document.querySelector("#messages");
+const board = document.querySelectorAll(".board button");
+const button = document.querySelectorAll(".board> button");
+
 
 // Initially disable board
 board.forEach(setAttr)
 // Add event listener to buttons
 button.forEach((val)=>{val.addEventListener('click', makeMove);})
 
-
 // Event is called when either player makes a move
 socket.on("move.made", function (data) {
+
   // Render the move
   document.querySelector("#" + data.position).textContent = data.symbol;
   // If the symbol is the same as the player's symbol,
@@ -43,10 +44,12 @@ socket.on("move.made", function (data) {
 
 // Set up the initial state when the game begins
 socket.on("game.begin", function (data) {
+
   // The server will asign X or O to the player
   symbol = data.symbol;
   // Give X the first turn
   myTurn = symbol === "X";
+
   renderTurnMessage();
 });
 
@@ -108,6 +111,7 @@ function isGameOver() {
   // to either 'XXX' or 'OOO'
   for (var i = 0; i < rows.length; i++) {
     if (rows[i] === matches[0] || rows[i] === matches[1]) {
+      console.log(rows);
       return true;
     }
   }
