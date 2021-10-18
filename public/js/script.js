@@ -111,7 +111,6 @@ function isGameOver() {
   // to either 'XXX' or 'OOO'
   for (var i = 0; i < rows.length; i++) {
     if (rows[i] === matches[0] || rows[i] === matches[1]) {
-      console.log(rows);
       return true;
     }
   }
