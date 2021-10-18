@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const port = process.env.PORT || 3000
 const http = require('http').createServer(app);
 const io = require('socket.io')(http);
 
@@ -74,6 +75,6 @@ function getOpponent(socket) {
 }
 
 
-http.listen(3000, ()=> {
+http.listen(port, ()=> {
 	console.log('listening on *:3000');
 })
